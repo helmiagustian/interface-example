@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/helmiagustian/interface1/handler"
+	"github.com/helmiagustian/interface-example/handler"
 )
 
 type geometry interface {
@@ -20,6 +20,8 @@ func ukuran(g geometry) {
 func main() {
 	r := handler.NewKotakHandler(3, 4)
 	ukuran(r)
+
+	fmt.Printf("\n")
 
 	c := handler.NewLingkaranHandler(5)
 	ukuran(&c)
