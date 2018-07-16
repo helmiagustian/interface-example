@@ -1,6 +1,6 @@
 package handler
 
-// Kotak struct type, implementing geometry interface
+// Kotak struct type
 type Kotak struct {
 	width, height float64
 }
@@ -10,12 +10,12 @@ func NewKotakHandler(width, height float64) Kotak {
 	return Kotak{width, height}
 }
 
-// Luas is receiver method for Kotak struct
-func (r Kotak) Luas() float64 {
+// Luas is receiver method for Kotak struct, implementing geometry interface
+func (r Kotak) Luas() float64 { // method on value
 	return r.width * r.height
 }
 
-// Keliling is receiver method for Kotak struct
-func (r Kotak) Keliling() float64 {
+// Keliling is receiver method for Kotak struct, implementing geometry interface
+func (r Kotak) Keliling() float64 { // method on value
 	return 2*r.width + 2*r.height
 }
