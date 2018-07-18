@@ -40,7 +40,9 @@ func main() {
 	st1 = handler.SegiTiga{5}
 	ukuran(st1)
 
+	// example not implementing
 	fmt.Println("Segitiga 2")
 	st2 := handler.SegiTiga{10}
-	ukuran(st2)
+	fmt.Printf("Luasnya adalah %v\n", st2.Luas())
+	fmt.Printf("Kelilingnya adalah %v\n", st2.Keliling())
 }
