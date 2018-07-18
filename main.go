@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"math"
 
 	"github.com/helmiagustian/interface-example/handler"
 )
@@ -13,11 +12,6 @@ type geometry interface {
 	Keliling() float64
 }
 
-// SegiTiga struct type
-type SegiTiga struct {
-	sisi float64
-}
-
 // ukuran function
 func ukuran(g geometry) {
 	fmt.Printf("Luasnya adalah %v\n", g.Luas())
@@ -26,25 +20,27 @@ func ukuran(g geometry) {
 
 func main() {
 
-	fmt.Println("Kotak")
-	r := handler.NewKotakHandler(3, 4)
-	ukuran(r)
+	fmt.Println("Kotak 1")
+	k1 := handler.NewKotakHandler(3, 4)
+	ukuran(k1)
+
+	fmt.Println("Kotak 2")
+	k2 := handler.Kotak{
+		Height: 6,
+		Width:  5,
+	}
+	ukuran(k2)
 
 	fmt.Println("Lingkaran")
-	c := handler.NewLingkaranHandler(5)
-	ukuran(&c)
+	l := handler.NewLingkaranHandler(5)
+	ukuran(&l)
 
-	fmt.Println("Segitiga")
-	st := SegiTiga{5}
-	ukuran(st)
-}
+	fmt.Println("Segitiga 1")
+	var st1 handler.SegiTiga
+	st1 = handler.SegiTiga{5}
+	ukuran(st1)
 
-// Luas is receiver method for SegiTiga struct, implementing geometry interface
-func (r SegiTiga) Luas() float64 { // method on value
-	return (0.5 * r.sisi) * math.Sqrt((r.sisi*r.sisi)-(0.5*r.sisi*0.5*r.sisi))
-}
-
-// Keliling is receiver method for SegiTiga struct, implementing geometry interface
-func (r SegiTiga) Keliling() float64 { // method on value
-	return r.sisi * 3
+	fmt.Println("Segitiga 2")
+	st2 := handler.SegiTiga{10}
+	ukuran(st2)
 }
