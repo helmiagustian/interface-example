@@ -6,7 +6,7 @@ import (
 	"github.com/helmiagustian/interface-example/handler"
 )
 
-// geometry interface
+// geometry mewakili prilaku dari bidang
 type geometry interface {
 	Luas() float64
 	Keliling() float64
