@@ -7,12 +7,12 @@ type SegiTiga struct {
 	Sisi float64
 }
 
-// Luas is receiver method for SegiTiga struct, implementing geometry interface
+// Luas is receiver method for SegiTiga struct, implementing geometry interface, value receiver
 func (r SegiTiga) Luas() float64 { // method on value
 	return (0.5 * r.Sisi) * math.Sqrt((r.Sisi*r.Sisi)-(0.5*r.Sisi*0.5*r.Sisi))
 }
 
-// Keliling is receiver method for SegiTiga struct, implementing geometry interface
+// Keliling is receiver method for SegiTiga struct, implementing geometry interface, value receiver
 func (r SegiTiga) Keliling() float64 { // method on value
 	return r.Sisi * 3
 }
